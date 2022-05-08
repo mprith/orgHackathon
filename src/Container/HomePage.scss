@@ -1,0 +1,26 @@
+.homePage {
+    padding: 40px;
+    .column {
+        display: inline-block;
+        vertical-align: top;
+        width: 225px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 20px;
+        background: #465362;
+        color: #bfdbf7;
+    }
+
+    .column-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        padding: 15px;
+        background: #011936;
+        color: #f4fffd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+}
