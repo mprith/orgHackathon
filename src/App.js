@@ -1,12 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import HomePage from './Container/HomePage';
+import LoginPage from "./Container/LoginPage";
 
 function App() {
   return (
     <div className="App">
       <h1 className='header'> Organization Hackathon </h1>
-      <HomePage />
+      <LoginPage />
     </div>
   );
 }

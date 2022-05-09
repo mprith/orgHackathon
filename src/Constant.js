@@ -16,7 +16,7 @@ export const data = [
         date: "",
         vote: 0,
         id : 1,
-        date:" Sat May 07 2022 18:13:23 GMT+0530 (India Standard Time)",
+        date:" Mon May 09 2022 18:13:23 GMT+0530 (India Standard Time)",
     },
     {
         tag: "Tech",
@@ -25,7 +25,7 @@ export const data = [
         date: "",
         vote: 0,
         id : 2,
-        date:" Mon May 09 2022 18:13:23 GMT+0530 (India Standard Time)",
+        date:" Sat May 07 2022 18:13:23 GMT+0530 (India Standard Time)",
     },
     {
         tag: "Feature",
@@ -37,3 +37,7 @@ export const data = [
         date:" Sun May 08 2022 18:13:23 GMT+0530 (India Standard Time)",
     }
 ];
+
+export const employeeData = [
+    "ZM 433", "12345", "GH372"
+]
