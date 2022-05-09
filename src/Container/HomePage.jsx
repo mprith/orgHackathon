@@ -4,6 +4,7 @@ import Card from "../Components/Card";
 import AddForm from "../Components/AddForm";
 import { challengeTag, data } from "../Constant";
 import "./HomePage.scss";
+import ActionBar from '../Components/ActionBar';
 
 
 export default function HomePage(props) {
@@ -12,6 +13,7 @@ export default function HomePage(props) {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [tag, setTag] = useState("");
+    const [sortOn, setSortOn] = useState("");
 
     const [challengeData, setChallengeData] = useState(data);
     let techData = challengeData.filter(el => el.tag === challengeTag[0]);
@@ -43,19 +45,25 @@ export default function HomePage(props) {
         setTag(e);
     }
 
+    const handleSortSelect = (e) => {
+        setSortOn(e);
+        challengeData.sort((a, b) => a[e.toLowerCase()] - b[e.toLowerCase()]);
+        setChallengeData(challengeData);
+    }
+
     const handleVoting = (action, id) => {
         const newData = challengeData.map((item) => {
             if (item.id === id) {
                 const updatedItem = {
                     ...item,
                 };
-                if(action === "upvote") {
-                    updatedItem.likes = item.likes + 1;
+                if (action === "upvote") {
+                    updatedItem.vote = item.vote + 1;
                 } else {
-                    if(updatedItem.likes === 0){
-                        updatedItem.likes = 0; 
+                    if (updatedItem.vote === 0) {
+                        updatedItem.vote = 0;
                     } else {
-                        updatedItem.likes = item.likes -1;
+                        updatedItem.vote = item.vote - 1;
                     }
                 }
                 return updatedItem;
@@ -80,7 +88,9 @@ export default function HomePage(props) {
                 title: title,
                 description: desc,
                 date: "",
-                likes: 0,
+                vote: 0,
+                id: Math.random(),
+                date: new Date(),
             }
             challengeData.push(postData);
             setChallengeData(challengeData);
@@ -93,19 +103,11 @@ export default function HomePage(props) {
 
     return (
         <div className='homePage'>
-
-            {isModalOpen && <AddForm
-                isModalOpen={isModalOpen}
-                handleClose={handleClose}
-                handleTitleOnChange={handleTitleOnChange}
-                handleDescOnChange={handleDescOnChange}
-                handleOnSubmit={handleOnSubmit}
-                handleSelect={handleSelect}
-                tag={tag}
-            />}
-            <Button variant="secondary" className="addBtn" onClick={() => { setIsModalOpen(true) }} size="lg">
-                Add Challenge
-            </Button>
+            <ActionBar
+                setIsModalOpen={setIsModalOpen}
+                sortOn={sortOn}
+                handleSortSelect={handleSortSelect}
+            />
             <>
                 <div className="column">
                     <div className="column-title">Tech</div>
@@ -120,6 +122,16 @@ export default function HomePage(props) {
                     />
                 </div>
             </>
+            {isModalOpen && <AddForm
+                isModalOpen={isModalOpen}
+                handleClose={handleClose}
+                handleTitleOnChange={handleTitleOnChange}
+                handleDescOnChange={handleDescOnChange}
+                handleOnSubmit={handleOnSubmit}
+                handleSelect={handleSelect}
+                tag={tag}
+            />}
+
         </div>
     )
 

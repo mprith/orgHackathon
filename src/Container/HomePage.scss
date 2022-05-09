@@ -1,12 +1,17 @@
 .homePage {
     padding: 40px;
     text-align: center;
-
-    .addBtn {
-        display: block;
+    .actionBar {
+        display: flex;
         margin: 0 0 40px 40px;
+        .dropdown {
+            margin-left: 20px;
+            .btn-secondary {
+                padding: 12px;
+            }
+        }
     }
-
+    
     .column {
         text-align: left;
         display: inline-block;

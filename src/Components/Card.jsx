@@ -13,7 +13,7 @@ export default function Card(props) {
             <div className="card-title">{el.title}</div>
             <div className="card-desc">{el.description}</div>
             <div className='vote'>
-                <span>{el.likes}</span>
+                <span>{el.vote}</span>
                 <span onClick={() => { handleVoting("upvote", el.id) }}><img src={like} alt="Like" /></span>
                 <span onClick={() => { handleVoting("downvote", el.id) }}><img src={dislike} alt="Dislike" /></span>
             </div>

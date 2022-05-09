@@ -1,6 +1,7 @@
 import React from 'react';
 import "../Container/HomePage.scss";
 import { Modal, Button, Form, DropdownButton, Dropdown } from "react-bootstrap";
+import {challengeTag} from  "../Constant";
 
 export default function AddForm(props) {
     const { isModalOpen, handleClose, handleDescOnChange, handleTitleOnChange, handleOnSubmit, handleSelect, tag } = props;
@@ -23,7 +24,7 @@ export default function AddForm(props) {
                     <DropdownButton
                         title={tag ? tag : "Select Tag"}
                         onSelect={handleSelect}>
-                        {['Tech', 'Feature'].map(
+                        {challengeTag.map(
                             (variant) => (
                                 <Dropdown.Item key={variant} eventKey={variant}>{variant}</Dropdown.Item>))}
                     </DropdownButton>
