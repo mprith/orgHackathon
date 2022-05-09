@@ -1,9 +1,17 @@
 .homePage {
     padding: 40px;
+    text-align: center;
+
+    .addBtn {
+        display: block;
+        margin: 0 0 40px 40px;
+    }
+
     .column {
+        text-align: left;
         display: inline-block;
         vertical-align: top;
-        width: 225px;
+        width: 35%;
         padding: 10px 15px;
         border-radius: 5px;
         margin-right: 20px;
@@ -16,11 +24,31 @@
         margin-bottom: 10px;
     }
 
+    .card-desc {
+        font-size: 12px;
+    }
+
     .card {
         padding: 15px;
         background: #011936;
         color: #f4fffd;
         border-radius: 5px;
         margin-bottom: 10px;
+    }
+    .vote span{
+        margin-right: 10px;
+        img {
+            height: 25px;
+            width: 25px;
+        }
+    }
+}
+
+.modal-dialog {
+    .dropdown{
+        margin: 10px 0;
+    }
+    .formgroup {
+        margin-bottom: 20px;
     }
 }
