@@ -48,12 +48,18 @@ export default function HomePage(props) {
             if (item.id === id) {
                 const updatedItem = {
                     ...item,
-                    likes: action === "upvote" ? item.likes + 1 : item.likes - 1
                 };
-
+                if(action === "upvote") {
+                    updatedItem.likes = item.likes + 1;
+                } else {
+                    if(updatedItem.likes === 0){
+                        updatedItem.likes = 0; 
+                    } else {
+                        updatedItem.likes = item.likes -1;
+                    }
+                }
                 return updatedItem;
             }
-
             return item;
         });
         setChallengeData(newData);
