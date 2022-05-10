@@ -11,8 +11,8 @@ export const sortingFilter = [
 export const data = [
     {  
         tag: "Tech",
-        title: "Card title 1",
-        description: "Card content",
+        title: "Challenge 1",
+        description: "Challenge content 1",
         date: "",
         vote: 0,
         id : 1,
@@ -20,8 +20,8 @@ export const data = [
     },
     {
         tag: "Tech",
-        title: "Card title 2",
-        description: "Card content",
+        title: "Challenge 2",
+        description: "Challenge content 2",
         date: "",
         vote: 0,
         id : 2,
@@ -29,8 +29,8 @@ export const data = [
     },
     {
         tag: "Feature",
-        title: "Card title 3",
-        description: "Card content",
+        title: "Challenge 3",
+        description: "Challenge content 3",
         date: "",
         vote: 0,
         id : 3,
