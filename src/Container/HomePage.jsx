@@ -47,7 +47,11 @@ export default function HomePage(props) {
 
     const handleSortSelect = (e) => {
         setSortOn(e);
-        challengeData.sort((a, b) => a[e.toLowerCase()] - b[e.toLowerCase()]);
+        if(e  === "Date") {
+            challengeData.sort((a,b) =>  new Date(b.date) - new Date(a.date));
+        } else {
+            challengeData.sort((a, b) => b[e.toLowerCase()] - a[e.toLowerCase()]);
+        }
         setChallengeData(challengeData);
     }
 
